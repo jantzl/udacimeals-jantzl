@@ -167,7 +167,7 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({calendar, food}) {
+function mapStateToProps({food, calendar}) {
 	const dayOrder = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 
 	return {
@@ -180,7 +180,7 @@ function mapStateToProps({calendar, food}) {
 
 				return meals
 			},{})
-		}))
+		})),
 	}
 }
 
@@ -191,4 +191,7 @@ function mapDispatchToProps (dispatch) {
 	}
 }
 
-export default connect(mapStateToProps)(App)
+export default connect(
+	mapStateToProps, 
+	mapDispatchToProps
+)(App)
